@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    <component-a></component-a>
+    <component-b></component-b>
+</div>
+<script>
+    var bus = new Vue() //首先建立一个空的Vue实例作为事件的中转
+
+    Vue.component('component-a',{
+        template: `<div><button @click="incrementB">{{masgA}}</button></div>`, //添加点击事件
+        data ()  {
+            return {
+                masgA : 0
+            }
+        },
+        methods: {
+            incrementB: function () {
+                bus.$emit('incrementB')
+            }
+        },
+        mounted: function () {
+            var _this = this
+            bus.$on('incrementA',function(){
+                _this.masgA ++
+            })
+            bus.$on('incrementA',()=>{
+                this.masgA ++
+        })
+        }
+    })
+
+    Vue.component('component-b',{
+        template: `<div><button @click="incrementA">{{masgB}}</button></div>`,
+        data ()  {
+            return {
+                masgB : 0
+            }
+        },
+        methods: {
+            incrementA: function () {
+                bus.$emit('incrementA')
+            }
+        },
+        mounted: function(){
+            bus.$on('incrementB',() => {
+                this.masgB ++
+        })
+        }
+    })
+
+    var vm = new Vue({
+        el: "#app"
+    })
+</script>
+</body>
+</html>

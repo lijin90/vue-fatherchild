@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <my-component :toto="msg"></my-component>
+    </div>
+    <script>
+        Vue.component('my-component', {
+            template: '<div>{{toto}}</div>',//定义的名字
+            props:['toto']
+        })
+        var app=new Vue({
+            el:"#app",
+            data(){
+                return{
+                    msg:"父向子传值"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

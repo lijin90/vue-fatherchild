@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <component v-on:father="changefather" :cf="famsg"></component>
+    </div>
+    <script>
+        Vue.component('component',{
+            template:`<div @click="child">{{cf}}</div>`,//默认结束父级传递过来的值
+            data(){
+            },
+            props:['cf'],
+            methods:{
+                child:function(){
+                    this.$emit('father',"子像父传值")
+                }
+            }
+        })
+        var app=new Vue({
+            el:"#app",
+            data(){
+                return{
+                    famsg:"sds"//传给子集
+                }
+            },
+            methods:{
+                changefather:function(m){
+                    console.log(m);
+                    this.famsg=m
+                }
+            },
+        })
+    </script>
+</body>
+</html>
