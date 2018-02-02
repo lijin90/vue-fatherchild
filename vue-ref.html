@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" ref="input1" id="input1">
+        <button @click="add">添加</button>
+        <ul v-for="item in list">
+            <li ref="item">姓名：{{item.name}};年龄{{item.age}}</li>
+        </ul>
+        <my-component ref="com"></my-component>
+    </div>
+    <script>
+        Vue.component('my-component',{
+            template:`<div class="inner">我是全局组件</div>`
+        })
+        var app=new Vue({
+            el:"#app",
+            data:{
+                list:[
+                    {name:'lj',age:20},
+                    {name:'lj2',age:22},
+                    {name:'lj3',age:23},
+                ]
+            },
+            methods:{
+                add(){
+
+                }
+            },
+            mounted:function(){
+                console.log(this.$refs)
+            }
+        })
+    </script>
+</body>
+</html>
