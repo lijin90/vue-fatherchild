@@ -10,6 +10,7 @@
         <my-component :toto="msg"></my-component>
     </div>
     <script>
+//        父向子传值
         Vue.component('my-component', {
             template: '<div>{{toto}}</div>',//定义的名字
             props:['toto']
