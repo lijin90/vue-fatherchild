@@ -23,6 +23,7 @@
     })
     // 创建 Profile 实例，并挂载到一个元素上。
     new Profile().$mount('#mount-point');
+//    挂在到全局组件
     Vue.component('lj',Profile);
     var app=new Vue({
         el:"#app"

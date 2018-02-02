@@ -37,6 +37,7 @@
         </li>
     </ul>
     <transition-group   name="fade">
+        <!--//如果是list要使用key-->
         <div class="box" v-for="(j,index) in itemcon" v-bind:key="j" v-show="index==num">
             {{j}}
             <!--<span v-for="(j,index) in itemcon" v-bind:key="j" v-show="index==num"> {{j}}</span>-->
