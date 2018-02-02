@@ -10,6 +10,7 @@
         <component v-on:father="changefather" :cf="famsg"></component>
     </div>
     <script>
+//        子像父传值
         Vue.component('component',{
             template:`<div @click="child">{{cf}}</div>`,//默认结束父级传递过来的值
             data(){
