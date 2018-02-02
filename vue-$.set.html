@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="item in arr">{{item}}</li>
+    </ul>
+</div>
+<!--Vue.extend手动挂载1=id上-->
+<div id="box"></div>
+<!--Vue.extend手动挂载2直接元素上-->
+<span></span>
+<script>
+    var author = Vue.extend({
+        template: "<p><a :href='url'>{{author}}& {{name}}</a></p>",
+        data : function() {
+            return {
+                author : 'vamous',
+                url : 'http://blog.csdn.net/Dear_Mr/article/details/72614370'
+            }
+        },
+//        接收数据
+        props : ['name']
+    });
+//    挂载到元素上
+    new author({propsData: {name : '可以利用propsData传递参数'}}).$mount('span');
+
+//    挂载到id上
+    var MyComponent = Vue.extend({
+        template: '<div>Hello!</div>'
+    })
+    new MyComponent().$mount('#box');
+
+
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            arr:[111,222,333]
+        }
+    })
+//    使用$set()
+    vm.arr[0]=666;
+    Vue.set(vm.arr,1,2020);
+//        vm.$set(vm.arr,1,2020);
+</script>
+</body>
+</html>

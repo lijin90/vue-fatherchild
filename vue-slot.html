@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <button @click="toshow">slot</button>
+    <child v-if="slot">
+        <span slot="name1">李金</span>
+        <!--//slot与下面的name值相同父组件父组件控制子组件-->
+    </child>
+</div>
+<script>
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            slot:true
+        },
+        methods:{
+            toshow(){
+                this.slot=!this.slot
+            }
+        },
+        components:{
+            'child':{
+                template:`<div><slot name="name1"></slot>我是好人</div>`
+            }
+        }
+    })
+</script>
+</body>
+</html>
