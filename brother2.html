@@ -12,7 +12,6 @@
 </div>
 <script>
     var bus = new Vue() //首先建立一个空的Vue实例作为事件的中转
-
     Vue.component('component-a',{
         template: `<div><button @click="incrementB">{{masgA}}</button></div>`, //添加点击事件
         data ()  {
