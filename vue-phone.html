@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        ul li{
+            line-height: 40px;
+            overflow: hidden;
+        }
+        ul li.btm{
+            border-bottom: 1px solid #666;
+        }
+        .fix{
+            position: fixed;
+            right:2%;
+            /*top:40%;*/
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="item in data" :class="objClass">
+            <span id="tp">{{item.index}}</span>
+            <ul>
+                <li v-for="val in item.users">
+                    <span>{{val.name}}</span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul :class="{fix:right}" id="fixed">
+        <li v-for="item,index in data">
+            <span @click="scroll($event)">{{item.index}}</span>
+        </li>
+    </ul>
+</div>
+<script>
+    var data=[
+        {"index":"A","users":[
+            {"name":"a","tel":1111111},
+            {"name":"a2","tel":1111111},
+            {"name":"a3","tel":1111111}
+        ]},
+        {"index":"B","users":[
+            {"name":"b","tel":22222},
+            {"name":"b2","tel":22222},
+            {"name":"b3","tel":22222}
+        ]},
+        {"index":"C","users":[
+            {"name":"c","tel":22222},
+            {"name":"c2","tel":22222},
+            {"name":"c3","tel":22222}
+        ]},
+        {"index":"d","users":[
+            {"name":"dc","tel":22222},
+            {"name":"d2","tel":22222},
+            {"name":"d3","tel":22222}
+        ]},
+        {"index":"e","users":[
+            {"name":"e","tel":22222},
+            {"name":"e2","tel":22222},
+            {"name":"e3","tel":22222}
+        ]},
+        {"index":"f","users":[
+            {"name":"f","tel":22222},
+            {"name":"f2","tel":22222},
+            {"name":"f3","tel":22222}
+        ]},
+        {"index":"g","users":[
+            {"name":"g","tel":22222},
+            {"name":"g2","tel":22222},
+            {"name":"g3","tel":22222}
+        ]},
+        {"index":"h","users":[
+            {"name":"h","tel":22222},
+            {"name":"h2","tel":22222},
+            {"name":"h3","tel":22222}
+        ]}
+    ]
+    var app=new Vue({
+        el:"#app",
+        data:{
+            right:true,
+            data:data,
+            objClass:{
+                btm:true,
+            }
+        },
+        computed:{
+        },
+        mounted(){//注意created
+            this.fixed();
+        },
+        methods:{
+            scroll:function(e){
+                var gl=e.target.innerHTML;//获取当前点击的元素内容
+                for(var i=0;i<tp.length;i++){//遍历    <span id="tp">{{item.index}}</span>
+//                    if(gl==tp[i].innerHTML){//如果当前的点击元素等于tp[i].innerHTML
+                    if(gl.indexOf(tp[i].innerHTML)!=-1){//或者能检索到
+                        document.documentElement.scrollTop=tp[i].offsetTop;
+                    }
+                }
+            },
+            fixed:function(){
+//               console.log(document.getElementById("fixed").offsetHeight);
+                var ht=document.documentElement.clientHeight-document.getElementById("fixed").offsetHeight;
+                var ht=document.documentElement.clientHeight-fixed.offsetHeight;
+                console.log(ht);
+                fixed.style.top=ht/2+'px';
+            }
+        },
+    })
+</script>
+</body>
+</html>

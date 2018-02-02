@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+    </style>
+</head>
+<div id="app">
+    <input v-model="filterText"/>
+    <ul>
+        <li v-for="item in obj">
+            <span>{{myfilter(item.label)}}</span>
+        </li>
+    </ul>
+</div>
+
+<script>
+    var app=new Vue({
+        el:'#app',
+        data () {
+            return {
+                obj: [
+                    {value: 0, label: 'beijing'},
+                    {value: 1, label: 'shanghai'},
+                    {value: 2, label: 'guangdong'},
+                    {value: 3, label: 'zhejiang'},
+                    {value: 4, label: 'jiangshu'}
+                ],
+                filterText: ''
+            }
+        },
+        methods: {
+            myfilter (value) {
+                if (value.indexOf(this.filterText) > -1) {
+                    return value
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

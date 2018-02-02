@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        .through{
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <p>一共{{arr.length}}项，已完成{{over}}项</p>
+    <ul>
+        <li v-for="a in arr">
+            <input type="checkbox" v-model="a.bolean">
+            <span :class="{through:a.bolean}">{{a.name}}</span>
+        </li>
+    </ul>
+    <input type="text" v-model="msg">
+    <button @click="zeng">add</button>
+</div>
+<script>
+    var app=new Vue({
+        el:"#app",
+        data:{
+            arr:[
+                {name:'vue',bolean:false},
+                {name:'react',bolean:false},
+            ],
+            msg:"",
+        },
+        computed:{
+            over(){
+                var count=0;
+                this.arr.forEach(function(item){//item下标
+                    count+=item.bolean?1:0;//为真时加一否则减一
+                })
+                return count;
+            },
+        },
+        methods:{
+            zeng:function(){
+                this.arr.push({
+                    name:this.msg,
+                    bolean:false
+                });
+                this.msg=''//添加完清空
+            }
+        }
+    })
+</script>
+</body>
+</html>

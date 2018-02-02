@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        *{
+            margin:0px;
+            padding:0;
+        }
+        #app{
+            width: 600px;
+            height:600px;
+            overflow: hidden;
+            margin:0 auto;
+        }
+        ul{
+            /*width: 600px;*/
+            /*height:400px;*/
+            overflow: hidden;
+        }
+        /*li{*/
+        /*width: 600px;*/
+        /*height:400px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div id="app">
+    <img :src="imgsrc" alt="">
+    <ul>
+        <li v-for="item,index in arr" @click="tab(item,index)">第{{index+1}}张</li>
+    </ul>
+    <button @click="prev">上一张</button>
+    <button @click="next">下一张</button>
+</div>
+<script>
+    var app=new Vue({
+        el:"#app",
+        data:{
+            imgsrc:'img/banner2.jpg',
+            arr:['img/banner2.jpg','img/banner3.jpg','img/banner4.jpg','img/banner5.jpg'],
+            currentindex:0,
+        },
+        methods:{
+            tab(i,index){
+                this.imgsrc=i;
+                this.currentindex=index//保存下标点击下一张或上一张图片不会乱
+            },
+            prev:function(){
+                this.currentindex--;
+                if(this.currentindex==-1){
+                    this.currentindex=this.arr.length-1;
+                }
+                this.imgsrc=this.arr[this.currentindex];
+            },
+            next:function(){
+                this.currentindex++;
+                if(this.currentindex==this.arr.length){
+                    this.currentindex=0;
+                }
+                this.imgsrc=this.arr[this.currentindex];
+            },
+            paly:function(){
+                setInterval(this.next,3000);
+            },
+        },
+        created(){//钩子函数created(可替换)
+            this.paly();//调用methods里面的方法
+//               setInterval(this.next,3000);
+        }
+    });
+</script>
+</body>
+</html>
+© 2018 GitHub, Inc.
