@@ -6,15 +6,27 @@
     <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
-<div id="app">
-    <ul>
-        <li v-for="item in arr">{{item}}</li>
-    </ul>
-</div>
 <!--Vue.extend手动挂载1=id上-->
 <div id="box"></div>
 <!--Vue.extend手动挂载2直接元素上-->
 <span></span>
+<div id="app">
+    <ul>
+        <li v-for="(item,$index) in items"
+            @click="selectStyle (item) "
+            :class="{'active':item.active,'unactive':!item.active}" >
+            {{item.select}}
+            <span class="icon" v-show="item.active">当我是图标</span>
+        </li>
+    </ul>
+</div>
+<div id="app2">
+    <p v-for="item in items" :key="item.id">
+        {{item.message}}
+    </p>
+    <button class="btn" @click="btn2Click()">动态赋值</button><br/><br/>
+    <button class="btn" @click="btn3Click()">为data新增属性</button>
+</div>
 <script>
     var author = Vue.extend({
         template: "<p><a :href='url'>{{author}}& {{name}}</a></p>",
@@ -37,16 +49,52 @@
     new MyComponent().$mount('#box');
 
 
-    var vm=new Vue({
+    new Vue({
         el:"#app",
-        data:{
-            arr:[111,222,333]
+        data(){
+            return {
+                active: false,
+                items: [
+                    {select:'第一行'},
+                    {select:'第二行'},
+                    {select:'第三行'},
+                    {select:'第四行'},
+                ]
+            }
+        },
+        methods: {
+            selectStyle (item) {
+                this.$nextTick(function () {
+                    this.items.forEach(function (item) {
+                        Vue.set(item,'active',false)
+                    });
+                    Vue.set(item,'active',true)
+                    console.log(item.active);
+                });
+            }
         }
     })
-//    使用$set()
-    vm.arr[0]=666;
-    Vue.set(vm.arr,1,2020);
-//        vm.$set(vm.arr,1,2020);
+
+    var vm2=new Vue({
+        el:"#app2",
+        data:{
+            items:[
+                {message:"Test one",id:"1"},
+                {message:"Test two",id:"2"},
+                {message:"Test three",id:"3"}
+            ]
+        },
+        methods:{
+            btn2Click:function(){
+                //Vue methods中的this 指向的是Vue的实例，这里可以直接在this中找到items
+                Vue.set(this.items,0,{message:"Change Test",id:'10'})
+            },
+            btn3Click:function(){
+                var itemLen=this.items.length;
+                Vue.set(this.items,itemLen,{message:"Test add attr",id:itemLen});
+            }
+        }
+    });
 </script>
 </body>
 </html>
