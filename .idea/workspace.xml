@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8be6735f-12a5-447a-badb-604a53e185d8" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue.filter.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue-phone.html" afterPath="$PROJECT_DIR$/vue-phone.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue.filter.html" afterPath="$PROJECT_DIR$/vue.filter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/手机端rem js设置" afterPath="$PROJECT_DIR$/手机端rem js设置" />
     </list>
     <ignored path="vue father-child.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +29,7 @@
       <file leaf-file-name="brother.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/brother.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5714285">
+            <state vertical-scroll-proportion="-1.4193548">
               <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
               <folding />
             </state>
@@ -38,18 +39,28 @@
       <file leaf-file-name="vue-phone.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue-phone.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.2580647">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.5">
+              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vue.filter.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="手机端rem js设置" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/手机端rem js设置">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2544643">
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vue.filter.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue.filter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71744186">
-              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+            <state vertical-scroll-proportion="-17.13889">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -86,8 +97,10 @@
         <option value="$PROJECT_DIR$/brother2.html" />
         <option value="$PROJECT_DIR$/brother.html" />
         <option value="$PROJECT_DIR$/常用效果链接" />
-        <option value="$PROJECT_DIR$/vue-phone.html" />
         <option value="$PROJECT_DIR$/vue.filter.html" />
+        <option value="$PROJECT_DIR$/pgone.html" />
+        <option value="$PROJECT_DIR$/手机端rem js设置" />
+        <option value="$PROJECT_DIR$/vue-phone.html" />
       </list>
     </option>
   </component>
@@ -486,13 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/手机端rem js设置">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2544643">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/常用效果链接">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38169643">
@@ -502,24 +508,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/brother.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5714285">
+        <state vertical-scroll-proportion="-1.4193548">
           <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue-phone.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.2580647">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vue.filter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71744186">
-          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        <state vertical-scroll-proportion="-17.13889">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-phone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/手机端rem js设置">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2544643">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding />
         </state>
       </provider>
