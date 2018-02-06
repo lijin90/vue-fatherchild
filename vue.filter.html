@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{msg | reverseStr}}</p>
+    <p>{{ num | reverseStr | removeNum }}</p>
+</div>
+<script>
+    Vue.filter('reverseStr',function(msg){
+        return msg.split('').reverse().join('')
+    });
+    Vue.filter('removeNum',function(num){
+        return num.replace(/[^0-9]/g, '');
+    });
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            msg:"abcd",
+            num:'adsdsf1234',
+            content:"你好你好"
+        },
+        methods:{
+
+        },
+       
+    })
+</script>
+</body>
+</html>
