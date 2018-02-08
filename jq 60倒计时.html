@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="https://unpkg.com/vue"></script>-->
+    <!--<script src="jquery.min.js"></script>-->
+    <script src="jquery-1.11.0.min.js"></script>
+    <style>
+        .classB {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+<a href="javascript:;">点击获取</a>
+<button value="点击获取"></button>
+<input type="button" value="点击获取">
+<script>
+    jQuery(function ($) {
+        $('a').click(function(){
+            if($('a').attr('data-click')){
+                return;
+            }
+            $('a').attr('data-click',1);
+            s(60);
+        })
+        function s(o){
+            if(o===0){
+                $('a').text('点击获取');
+                $('a').removeAttr('data-click');
+                return;
+            }
+            $('a').text(o+'获取');
+            setTimeout(function(){
+                o--;
+                s(o)
+            },1000)
+        }
+        function second(o){
+            if(o===0){
+                $('input').val('点击获取');
+                $('input').removeAttr("disabled");
+                return;
+            }
+            $('input').val(o+'获取');
+            $('input').attr("disabled","disabled");
+            setTimeout(function(){
+                o--;
+                second(o)
+            },1000)
+        }
+        $('input').click(function(){
+            second(60)
+        })
+    });
+</script>
+</body>
+</html>
