@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <input type="radio" value="face"  v-model="classA">
+    <input type="radio" value="msg"  v-model="classA">
+    <div :class="classA">{{text}}</div>
+</div>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+//            input v-model值去控制class改变
+            classA: 'face' ,
+            text:"lijin",
+        }
+    });
+</script>
+</body>
+</html>
