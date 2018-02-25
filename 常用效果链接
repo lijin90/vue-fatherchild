@@ -1,6 +1,5 @@
 [ jquery 选择器 :first :first-child :first-of-type :nth-child() :nth-of-type() 综述 ]
 关于jquery选择器中:first和:first-child和:first-of-type的区别及:nth-child()和:nth-of-type()的区别
-
 https://www.cnblogs.com/mysearchblog/p/5607486.html
 
 
