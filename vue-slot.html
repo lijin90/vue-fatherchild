@@ -13,12 +13,23 @@
         <span slot="name1">李金</span>
         <!--//slot与下面的name值相同父组件父组件控制子组件-->
     </child>
+
+    <children>
+        <span slot="name1">12345</span>
+    </children>
 </div>
 <script>
+    Vue.component('children',{
+        template:`<div>
+                        <slot name="name1"></slot>
+                        button标签
+                    </div>`
+    })
     var vm=new Vue({
         el:"#app",
         data:{
-            slot:true
+            slot:true,
+            arr:[11,22,33]
         },
         methods:{
             toshow(){

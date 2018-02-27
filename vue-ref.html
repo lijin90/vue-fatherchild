@@ -12,6 +12,7 @@
         <ul v-for="item in list">
             <li ref="item">姓名：{{item.name}};年龄{{item.age}}</li>
         </ul>
+        <p>李金{{msg}}</p>
         <my-component ref="com"></my-component>
     </div>
     <script>
@@ -21,6 +22,7 @@
         var app=new Vue({
             el:"#app",
             data:{
+                msg:'',
                 list:[
                     {name:'lj',age:20},
                     {name:'lj2',age:22},
@@ -29,7 +31,7 @@
             },
             methods:{
                 add(){
-
+                this.msg='lijin';
                 }
             },
             mounted:function(){
