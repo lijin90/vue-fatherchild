@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+
+</head>
+<body>
+<div id="app">
+    <component :is="which"></component>
+    <button type="button" @click="changeComponent">改变组件</button>
+</div>
+<script>
+    var componentA = {
+        template: `<p>我是组件A</p>`
+    }
+    var componentB = {
+        template: `<p>我是组件B</p>`
+    }
+    var componentC = {
+        template: `<p>我是组件C</p>`
+    }
+    var app = new Vue({
+        el : '#app',
+        data : {
+            which : 'componentA'
+        },
+        components : {
+            'componentA':componentA,
+            'componentB':componentB,
+            'componentC':componentC,
+        },
+        methods : {
+            changeComponent : function(){
+                if(this.which == 'componentA'){
+                    this.which = 'componentB'
+                }else if(this.which == 'componentB'){
+                    this.which = 'componentC'
+                }else {
+                    this.which = 'componentA'
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

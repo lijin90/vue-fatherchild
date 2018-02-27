@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div class="test">
+    <span>{{message | filterFun}}</span>
+    <span>{{message | filterFun2(1,2)}}</span>
+    <span>{{str | up}}</span>
+</div>
+<script>
+    //    Vue.filter('up',function(value){
+    //        return value.charAt(0).toUpperCase()+value.substr(1);
+    //    });
+    new Vue({
+        el:".test",
+        data:{
+            message:4,
+            str:"abcd"
+        },
+        filters: {
+            filterFun: function (value) {
+                return value
+            },
+            filterFun2: function (value,sta1,sta2) {
+                return value+sta1+sta2
+            },
+            up:function(value){
+                return value.charAt(0).toUpperCase()+value.substr(1);
+            }
+        }
+    })
+    var str='asdcddsfds';
+    console.log(str.substr(3,1))
+</script>
+</body>
+</html>
