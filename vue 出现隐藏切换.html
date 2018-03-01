@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <button @click="tab">按钮</button>
+    <span v-if="st">出现</span>
+    <span v-if="hd">隐藏</span>
+</div>
+<script>
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            st:true,
+            hd:false
+        },
+        methods:{
+            tab(){
+                this.st=!this.st
+                this.hd=!this.hd
+            }
+        }
+    })
+</script>
+</body>
+</html>
