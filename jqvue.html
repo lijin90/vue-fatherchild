@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="jquery-1.11.0.min.js"></script>
+    <style>
+        .active{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(item,index) in items" @click="tab(index)" :class="{active:index==num}">{{item}}</li>
+    </ul>
+    <ul>
+        <li v-for="(con,index) in cons" v-show="index==num"  @click="er(index)">{{con}}</li>
+    </ul>
+    <ul>
+        <li v-for="(coner,index) in conch" v-show="index==num">{{coner}}</li>
+    </ul>
+</div>
+<script>
+    jQuery(function($){
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                items:[1,2,3],
+                cons:[11,22,33],
+                conch:[111,222,333],
+                num:0
+            },
+            methods:{
+                tab(index){
+                    this.num=index;
+                }
+            }
+        })
+    });
+</script>
+</body>
+</html>
